@@ -66,6 +66,27 @@ module.exports = {
         trackingId: config.siteGATrackingID
       }
     },
+     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "assets",
+        path: `${__dirname}/static/assets/`
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "posts",
+        path: `${__dirname}/content`
+      }
+    },
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-relative-images"
+          },
     {
       resolve: "gatsby-plugin-nprogress",
       options: {
